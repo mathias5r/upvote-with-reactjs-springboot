@@ -1,0 +1,14 @@
+
+.button-toolbar{
+	margin-top: 10px;
+	width: 100%;
+	align-content: center;
+	display: flex;
+	justify-content: center
+}
+
+
+.button{
+	width: 10%;
+	margin: 10px;
+}
