@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './PostView.css';
 import Post from './Post'
+import { getPosts } from './API'
+import Alert from 'react-s-alert';
 
 class PostView extends Component{
 
@@ -13,16 +14,21 @@ class PostView extends Component{
   	}
 
   	componentDidMount() {
-	    axios.get('http://localhost:8080/posts').then(res => {
+  		getPosts().then(res =>{
       		const posts = res.data;
-      		posts.reverse();
-      		this.setState({ posts });
-	    });
+     		posts.reverse();
+     		this.setState({ posts });
+  		}).catch(error =>{
+	        Alert.error('Erro ao tentar obter posts!',{
+	        	position: 'bottom-right'
+	        });
+  		})
 	}
 
   	render() {
     	return (
     		<div className="container">
+    			<Alert stack={{limit: 2}} />
 				{this.state.posts.map(post => (
 					<ul className="list-group">
 						<div className="jumbotron jumbo">

@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import {Button} from 'react-bootstrap'
 import Alert from 'react-s-alert';
 import './AddView.css';
-
-import 'react-s-alert/dist/s-alert-default.css';
-import 'react-s-alert/dist/s-alert-css-effects/slide.css';
+import { postNewPost } from './API'
 
 class Add extends Component{
 
@@ -29,21 +26,24 @@ class Add extends Component{
 		});
 	}
 
-	performPostRequest() {
+	createPost() {
 		const params = new URLSearchParams();
 		params.append('author', this.state.author);
 		params.append('text', this.state.text);
 
-		axios.post('http://localhost:8080/post', params)
-			.then(res => {
-				this.setState({
-					author: '',
-					text: ''
-				});
-		        Alert.info('Comentário adicionado com sucesso',{
-		        	position: 'bottom-right'
-		        });
-		});
+		postNewPost(params).then(res => {
+			this.setState({
+				author: '',
+				text: ''
+			});
+	        Alert.info('Comentário adicionado com sucesso',{
+	        	position: 'bottom-right'
+	        });
+		}).catch(error =>{
+	        Alert.error('Erro ao tentar criar post!',{
+	        	position: 'bottom-right'
+	        });
+  		});
 	}
 
 	render() {
@@ -63,7 +63,7 @@ class Add extends Component{
 			</div>  
 				<div className="adicionar">
 					<Button 
-					onClick={this.performPostRequest.bind(this)}
+					onClick={this.createPost.bind(this)}
 					>Adicionar</Button>
 				</div>
 		</div>

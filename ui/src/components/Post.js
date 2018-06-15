@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import upvote from '../resources/upvote.png';
-import axios from 'axios';
+import {postUpvote} from './API'
+import Alert from 'react-s-alert';
 
 class Post extends Component{
 
@@ -11,14 +12,17 @@ class Post extends Component{
 	  	};
   	}
 
-	printPostId(id){
+	upvotePost(id){
 		const params = new URLSearchParams();
 	    params.append('id', id);
-
-	    axios.post('http://localhost:8080/upvote', params).then(res => {
-		   const post = res.data;
-		   this.setState({ post });
-		});
+	    postUpvote(params).then(res =>{
+	    	const post = res.data;
+	 		this.setState({ post });
+	    }).catch(error =>{
+	        Alert.error('Erro ao tentar executar upvote!',{
+	        	position: 'bottom-right'
+	        });
+  		});
 	}
 
 	render(){
@@ -36,7 +40,7 @@ class Post extends Component{
 					<p className="text">{this.state.post.text}</p>
 				</div>
 				<div className="outer">
-					<input onClick={() => this.printPostId(this.state.post.id)} className="upvotes" type="image" src={upvote} alt="upvote"/>
+					<input onClick={() => this.upvotePost(this.state.post.id)} className="upvotes" type="image" src={upvote} alt="upvote"/>
 					<p className="upvotes-value">{this.state.post.upvotes}</p>
 				</div>
 			</div>

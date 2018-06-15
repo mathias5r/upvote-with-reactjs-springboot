@@ -1,9 +1,23 @@
-import React, { Component } from 'react';
+import axios from 'axios';
 
-
-class API extends Component{
-
-	
-
+function get(url){
+    return axios.get(url);
 }
-export default Add;
+
+function post(url, params){
+    return axios.post(url,params);
+}
+
+export function getPosts(){
+	return get('http://localhost:8080/posts');
+}
+
+export function postUpvote(params){
+	return post('http://localhost:8080/upvote',params);
+}
+
+export function postNewPost(params){
+	return post('http://localhost:8080/post',params);
+}
+
+
