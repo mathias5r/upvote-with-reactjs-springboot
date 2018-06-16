@@ -21,7 +21,7 @@ describe('Testing Post.js', () =>{
 	  	const tree = renderer.getRenderOutput();
   		expect(tree).toMatchSnapshot();
 	})
-	it('should execute upvotePost...',() => {
+	it('should call upvotePost...',() => {
     	const spy = jest.spyOn(Post.prototype, 'upvotePost');
 		const wrapper = shallow(<Post post={post} />);
 		wrapper.find('input').simulate('click');

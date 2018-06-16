@@ -34,5 +34,5 @@ describe('Testing Add.js', () =>{
 		const wrapper = shallow(<Add />);
 		wrapper.find('Button').simulate('click');
 	  	expect(spy).toHaveBeenCalled();
-	})
+	});
 });

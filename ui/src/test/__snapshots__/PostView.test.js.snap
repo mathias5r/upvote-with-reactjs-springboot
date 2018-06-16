@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing PostView.js should render correctly... 1`] = `
+<div
+  className="container"
+>
+  <SAlert
+    stack={
+      Object {
+        "limit": 2,
+      }
+    }
+  />
+</div>
+`;
