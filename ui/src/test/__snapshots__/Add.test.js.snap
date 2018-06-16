@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Add.js should render correctly... 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="jumbotron jumbo"
+  >
+    <SAlert
+      stack={
+        Object {
+          "limit": 2,
+        }
+      }
+    />
+    <div>
+      <div
+        className="form-group"
+      />
+      <label>
+        Nome:
+      </label>
+      <input
+        className="form-control"
+        id="usr"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label>
+        Comentário:
+      </label>
+      <textarea
+        className="form-control"
+        id="comment"
+        onChange={[Function]}
+        rows="5"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="adicionar"
+  >
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
+      disabled={false}
+      onClick={[Function]}
+    >
+      Adicionar
+    </Button>
+  </div>
+</div>
+`;

@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Post.js should render correctly... 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <h5>
+        Mathias
+      </h5>
+    </div>
+    <div
+      className="col-md-auto"
+    >
+      <p>
+        88/88/2018
+      </p>
+    </div>
+  </div>
+  <div
+    className="text-box rounded"
+  >
+    <p
+      className="text"
+    >
+      Test
+    </p>
+  </div>
+  <div
+    className="outer"
+  >
+    <input
+      alt="upvote"
+      className="upvotes"
+      onClick={[Function]}
+      src={
+        Object {
+          "process": [Function],
+        }
+      }
+      type="image"
+    />
+    <p
+      className="upvotesvalue"
+    >
+      0
+    </p>
+  </div>
+</div>
+`;

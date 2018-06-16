@@ -10,6 +10,7 @@ class Post extends Component{
 	  	this.state = {
 	    	post:props.post
 	  	};
+	  	this.upvotePost = this.upvotePost.bind(this);
   	}
 
 	upvotePost(id){
@@ -41,7 +42,7 @@ class Post extends Component{
 				</div>
 				<div className="outer">
 					<input onClick={() => this.upvotePost(this.state.post.id)} className="upvotes" type="image" src={upvote} alt="upvote"/>
-					<p className="upvotes-value">{this.state.post.upvotes}</p>
+					<p className="upvotesvalue">{this.state.post.upvotes}</p>
 				</div>
 			</div>
 		);

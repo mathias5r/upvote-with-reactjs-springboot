@@ -1,4 +1,3 @@
-
 var assert = require('assert');
 var api = require('../components/API');
 
@@ -11,15 +10,15 @@ describe('Testing API', () =>{
 		params.append('text', 'Jest test');
 		api.postNewPost(params).then(res => {
 			const post = res.data;
-			expected(post.author).toEqual(author);
-			expected(post.test).toEqual(text);
+			expect(post.author).toEqual(author);
+			expect(post.test).toEqual(text);
 			return post;
 		});
 	})
 	it('should get all posts...',() =>{
 		api.getPosts().then(res =>{
 			const posts = res.data;
-			expected(posts).toContain(newPost);
+			expect(posts).toContain(newPost);
 		})
 	})
 	it('should upvote the new Post...',() =>{
@@ -29,8 +28,8 @@ describe('Testing API', () =>{
 		params.append('id', id);
 		api.postUpvote(params).then(res =>{
 			const post = res.data;
-			expected(post.id).toEqual(id);
-			expected(post.upvotes).toBeGreaterThan(upvotes);
+			expect(post.id).toEqual(id);
+			expect(post.upvotes).toBeGreaterThan(upvotes);
 		})
 	})
 })
