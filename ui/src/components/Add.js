@@ -54,12 +54,12 @@ class Add extends Component{
 				<div>
 					<div className="form-group"></div>
 					<label>Nome:</label>
-					<input type="text" className="form-control" id="usr" onChange={evt => this.updateAuthor(evt)} value={this.state.author}/>
+					<input maxlength="40" type="text" className="form-control" id="usr" onChange={evt => this.updateAuthor(evt)} value={this.state.author}/>
 				</div>
 				<div className="form-group">
 					<label>Comentário:</label>
-					<textarea className="form-control" rows="5" id="comment" onChange={evt => this.updateText(evt)} value={this.state.text}></textarea>
-			</div>
+					<textarea maxlength="250" className="form-control" rows="5" id="comment" onChange={evt => this.updateText(evt)} value={this.state.text}></textarea>
+				</div>
 			</div>  
 				<div className="adicionar">
 					<Button 

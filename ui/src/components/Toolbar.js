@@ -27,8 +27,8 @@ class Toolbar extends Component{
 	render() {
     	return (
     		<ButtonGroup>
-				<Button  onClick={this.handleHomeClick} >Home</Button>
-				<Button  onClick={this.handleAddClick}>Adicionar</Button>
+				<Button className='home' onClick={this.handleHomeClick} >Home</Button>
+				<Button className='adicionar' onClick={this.handleAddClick}>Adicionar</Button>
 			</ButtonGroup>
     	);
   	}

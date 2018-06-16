@@ -30,15 +30,15 @@ class Post extends Component{
 		return (
 			<div>
 				<div className="row">
-					<div className="col">
-						 <h5>{this.state.post.author}</h5>
+					<div className="col-md-auto">
+					 	<p>{this.state.post.author}</p>
 					</div>
 					<div className="col-md-auto">
-						 	<p>{this.state.post.date}</p>
+					 	<p>{this.state.post.date}</p>
 					</div>
 				</div>
 				<div className="text-box rounded">
-					<p className="text">{this.state.post.text}</p>
+					<textarea maxlength="250" className="form-control" rows="5" id="comment" value={this.state.post.text}></textarea>
 				</div>
 				<div className="outer">
 					<input onClick={() => this.upvotePost(this.state.post.id)} className="upvotes" type="image" src={upvote} alt="upvote"/>
