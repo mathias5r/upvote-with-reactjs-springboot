@@ -19,7 +19,7 @@ import com.upvote.service.exception.IdNotFoundException;
 
 
 @Controller
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000","http://localhost:5000"})
 @RequestMapping(path="/")
 public class PostController {
 	
@@ -37,7 +37,7 @@ public class PostController {
 		Post post = new Post();
 		post.setAuthor(author);
 		post.setDate(new Date().toString());
-		post.setText(new StringBuffer(text));
+		post.setText(text);
 		postService.savePost(post);
 		return new ResponseEntity<>(post, HttpStatus.CREATED);
 	}

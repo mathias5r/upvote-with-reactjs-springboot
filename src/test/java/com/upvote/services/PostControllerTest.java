@@ -44,7 +44,7 @@ public class PostControllerTest {
 		this.post = new Post();
 		this.post.setAuthor(author);
 		this.post.setDate(new Date().toString());
-		this.post.setText(new StringBuffer(text));
+		this.post.setText(text);
 		postRepository.save(this.post);
 	}
 	

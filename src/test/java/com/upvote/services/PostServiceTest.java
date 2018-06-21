@@ -42,7 +42,7 @@ public class PostServiceTest {
 		post = new Post();
 		post.setAuthor(name);
 		post.setDate(new Date().toString());
-		post.setText(new StringBuffer(text));
+		post.setText(text);
 		
 		when(postRepository.findById(post.getID())).thenReturn(Optional.empty());
 		when(postRepository.findByAuthor(post.getAuthor())).thenReturn(Optional.empty());

@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class Post {
@@ -16,7 +17,8 @@ public class Post {
 	private String author;
 	private String date;
 	@Column(length = 250, nullable = false)
-	private StringBuffer text;
+	@Lob
+	private String text;
 	private long upvotes;
 
 	public Post() {}
@@ -30,8 +32,8 @@ public class Post {
 	public String getDate() { return this.date; }
 	public void setDate(String date) { this.date = date; }
 	
-	public StringBuffer getText() { return this.text; }
-	public void setText(StringBuffer text) { this.text = text; }
+	public String getText() { return this.text; }
+	public void setText(String text) { this.text = text; }
 	
 	public long getUpvotes() { return this.upvotes; }
 	public void setUpvotes(long value) { this.upvotes = value;  }
