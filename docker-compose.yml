@@ -12,12 +12,12 @@ services:
       POSTGRES_DB: upvote
 
 
-  upvote-app:
+  upvote-server:
     volumes: 
-      - .:/app
-    working_dir: /app
+      - ./server:/server
+    working_dir: /server
 
-    build: .
+    build: ./server
 
     depends_on:
       - db
@@ -29,3 +29,14 @@ services:
       - DATABASE_PASSWORD=upvote
       - DATABASE_NAME=upvote 
       - DATABASE_PORT=5432
+
+  upvote-app:
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    build: ./app
+    command: make
+    depends_on: 
+     - upvote-server
+    ports:
+      - 5000:5000

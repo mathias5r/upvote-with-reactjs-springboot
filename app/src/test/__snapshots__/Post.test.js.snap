@@ -6,11 +6,11 @@ exports[`Testing Post.js should render correctly... 1`] = `
     className="row"
   >
     <div
-      className="col"
+      className="col-md-auto"
     >
-      <h5>
+      <p>
         Mathias
-      </h5>
+      </p>
     </div>
     <div
       className="col-md-auto"
@@ -23,11 +23,13 @@ exports[`Testing Post.js should render correctly... 1`] = `
   <div
     className="text-box rounded"
   >
-    <p
-      className="text"
-    >
-      Test
-    </p>
+    <textarea
+      className="form-control"
+      id="comment"
+      maxlength="250"
+      rows="5"
+      value="Test"
+    />
   </div>
   <div
     className="outer"

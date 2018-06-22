@@ -24,6 +24,7 @@ exports[`Testing Add.js should render correctly... 1`] = `
       <input
         className="form-control"
         id="usr"
+        maxlength="40"
         onChange={[Function]}
         type="text"
         value=""
@@ -38,6 +39,7 @@ exports[`Testing Add.js should render correctly... 1`] = `
       <textarea
         className="form-control"
         id="comment"
+        maxlength="250"
         onChange={[Function]}
         rows="5"
         value=""

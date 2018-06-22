@@ -10,4 +10,4 @@ RUN apk add --update \
 
 ADD pom.xml .
 RUN mvn verify --fail-never
-RUN mvn package
+RUN mvn package 

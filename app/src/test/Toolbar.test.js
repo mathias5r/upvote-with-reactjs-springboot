@@ -13,10 +13,4 @@ describe('Testing PostView.js', () =>{
 	  	const tree = renderer.getRenderOutput();
   		expect(tree).toMatchSnapshot();
 	});
-	it('should call handleHomeClick...',() =>{
-		const spy = jest.spyOn(Toolbar.prototype, 'handleHomeClick');
-		const wrapper = shallow(<Toolbar />);
-		wrapper.find('.home').simulate('click');
-	  	expect(spy).toHaveBeenCalled();
-	});
 });
