@@ -7,7 +7,8 @@ RUN apk add --update \
 ENV NPM_CONFIG_LOGLEVEL warn
 
 # Copy all local files into the image.
-COPY . .
+COPY . ./app
+WORKDIR ./app
 COPY package.json package.json
 COPY package-lock.json package-lock.json
 RUN npm install
