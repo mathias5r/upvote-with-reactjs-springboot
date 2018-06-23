@@ -9,18 +9,18 @@ ENV NPM_CONFIG_LOGLEVEL warn
 # Copy all local files into the image.
 COPY . ./app
 WORKDIR ./app
-COPY package.json package.json
-COPY package-lock.json package-lock.json
+
+# Install dependencies
 RUN npm install
 
 # Build for production.
 RUN npm run build --production
 
 # Install `serve` to run the application.
-RUN npm install -g serve
+RUN npm install serve --save
 
 # Install 'jest' to run the tests
-RUN npm install -g jest
+RUN npm install jest --save
 
 # Set the command to start the node server.
 CMD serve -s build
