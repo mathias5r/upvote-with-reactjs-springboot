@@ -1,0 +1,5 @@
+run: 
+
+tests:
+	npm test
+

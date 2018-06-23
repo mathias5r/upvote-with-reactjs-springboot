@@ -1,0 +1,42 @@
+version: '2'
+
+services:
+
+  db:
+    image: postgres
+    ports:
+      - 5433:5433
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: upvote
+      POSTGRES_DB: upvote
+
+
+  upvote-server:
+    volumes: 
+      - ./server:/server
+    working_dir: /server
+
+    build: ./server
+
+    depends_on:
+      - db
+    command: make
+    ports:
+      - 8080:8080
+    environment:
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=upvote
+      - DATABASE_NAME=upvote 
+      - DATABASE_PORT=5432
+
+  upvote-app:
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    build: ./app
+    command: make
+    depends_on: 
+     - upvote-server
+    ports:
+      - 5000:5000

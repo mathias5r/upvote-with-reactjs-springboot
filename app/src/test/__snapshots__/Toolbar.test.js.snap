@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing PostView.js should render correctly... 1`] = `
+<ButtonGroup
+  block={false}
+  bsClass="btn-group"
+  justified={false}
+  vertical={false}
+>
+  <Button
+    active={false}
+    block={false}
+    bsClass="btn"
+    bsStyle="default"
+    className="home"
+    disabled={false}
+    onClick={[Function]}
+  >
+    Home
+  </Button>
+  <Button
+    active={false}
+    block={false}
+    bsClass="btn"
+    bsStyle="default"
+    className="adicionar"
+    disabled={false}
+    onClick={[Function]}
+  >
+    Adicionar
+  </Button>
+</ButtonGroup>
+`;
